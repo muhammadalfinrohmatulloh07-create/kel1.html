@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UMKM PUDINGKU</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      background: linear-gradient(to bottom right, #fff7e6, #ffe8c2);
+      background-attachment: fixed;
+    }
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      transition: 0.4s;
+    }
+
+    .navbar.scrolled {
+      background: #fffaf3;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand strong {
+      color: #d97706;
+      font-size: 1.3rem;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: #444 !important;
+    }
+
+    .nav-link:hover {
+      color: #d97706 !important;
+      transition: 0.3s;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url(gambar\ umkm/bg.jpg) center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      background: rgba(0, 0, 0, 0.6);
+      display: inline-block;
+      padding: 15px 35px;
+      border-radius: 15px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #fef9c3;
+      margin-top: 15px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    section h2 {
+      color: #d97706;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+     #galeri {
+      background: #fffaf3;
+    }
+    .galeri-item {
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.4s ease;
+    }
+    .galeri-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: 0.4s ease;
+    }
+    .galeri-item:hover img {
+      transform: scale(1.1);
+    }
+
+    #anggota {
+      background: url(gambar\ umkm/bg2.jpg) center/cover fixed no-repeat;
+      color: white;
+    }
+
+    #anggota .card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      transition: 0.4s;
+      backdrop-filter: blur(8px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #anggota .card:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-10px);
+    }
+
+    #anggota img {
+      border-radius: 50%;
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border: 3px solid #fbbf24;
+      transition: transform 0.4s ease;
+    }
+
+    #anggota .card:hover img {
+      transform: scale(1.1);
+    }
+
+    #anggota .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.2);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    #anggota .card:hover::after {
+      opacity: 1;
+    }
+
+    #anggota h5 {
+      font-weight: 600;
+      margin-top: 15px;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    #anggota p {
+      color: #fbbf24;
+      font-size: 0.9rem;
+    }
+
+    #kontak {
+      background: #111;
+      color: white;
+    }
+
+    #kontak h3 {
+      color: #fbbf24;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background-color: #fbbf24;
+      color: #111;
+      padding: 15px 0;
+      font-weight: 500;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: #fff;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="gambar umkm/logo.png" alt="Logo Pudingku" width="55" height="55" class="me-2">
+        <strong>PUDINGKU</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sejarah">Sejarah</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+          <li class="nav-item"><a class="nav-link" href="#anggota">Anggota</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Lezatnya Puding Homemade “PUDINGKU”</h1>
+      <p>Puding lembut dengan rasa manis alami, dibuat dari bahan segar dan cinta lokal.</p>
+      <a href="#galeri" class="btn btn-warning btn-lg rounded-pill shadow mt-3">Lihat Menu Kami</a>
+    </div>
+  </section>
+
+
+  <section id="sejarah">
+    <div class="container text-center">
+      <h2>Sejarah dan Budaya Bali</h2>
+      <p>
+        Di tengah birunya samudra Indonesia terdapat sebuah pulau kecil yang namanya begitu 
+        terkenal di seluruh dunia, yaitu Pulau Bali. Pulau ini bukan hanya dikenal karena keindahan 
+        alamnya, tetapi juga karena jiwa dan budayanya yang begitu hidup, penuh warna, dan menyentuh 
+        hati siapa pun yang datang. Setiap sudut Bali menyimpan cerita panjang tentang sejarah, 
+        keyakinan, dan kebijaksanaan hidup yang diwariskan turun-temurun oleh para leluhurnya.
+        Sejak zaman prasejarah, masyarakat Bali sudah hidup di tanah yang subur ini. 
+        Mereka hidup dari bercocok tanam, berburu, dan memuja kekuatan alam. Batu-batu besar, 
+        menhir, dan peti kubur batu yang ditemukan menjadi saksi bisu bahwa sejak ribuan tahun lalu, 
+        Bali telah dihuni oleh manusia yang menghormati roh leluhur dan alam semesta. Mereka percaya 
+        bahwa kehidupan selalu terhubung dengan kekuatan yang tak kasat mata.
+      </p>
+      <p>
+        Sekitar abad ke-8, angin budaya dari India berhembus sampai ke Bali melalui jalur 
+        perdagangan dan pengaruh Kerajaan Majapahit di Jawa Timur. Dari sinilah ajaran Hindu 
+        dan Buddha mulai mengakar kuat. Masyarakat Bali tidak menolak pengaruh itu, justru mereka 
+        memadukannya dengan tradisi lokal, melahirkan bentuk kepercayaan unik yang dikenal sebagai 
+        Hindu Dharma Bali. Pada tahun 1343, pasukan Gajah Mada dari Majapahit menaklukkan Bali dan 
+        menjadikannya bagian dari kerajaan besar di Nusantara. Sejak itu, banyak bangsawan dan pendeta 
+        dari Majapahit yang menetap di Bali setelah kerajaan mereka runtuh. Dari mereka lahirlah sistem 
+        kerajaan-kerajaan baru seperti Klungkung, Karangasem, dan Buleleng yang memperkaya seni, bahasa, 
+        dan upacara adat Bali.
+        Abad ke-19 membawa masa sulit bagi Bali. Belanda datang dengan ambisi menaklukkan seluruh 
+        kepulauan Nusantara. Namun, rakyat Bali bukan bangsa yang mudah menyerah. Dalam berbagai 
+        peperangan seperti Perang Jagaraga dan Puputan Badung, rakyat dan para raja Bali memilih 
+        berjuang sampai titik darah penghabisan. Puputan bukan sekadar perang, tetapi lambang 
+        kehormatan dan keberanian untuk tidak tunduk pada penjajahan. Meskipun akhirnya Bali jatuh 
+        ke tangan Belanda, semangat rakyatnya tak pernah padam.
+      </p>
+    </div>
+  </section>
+
+  <section id="menu" class="text-center bg-light py-5">
+  <div class="container">
+    <h2 class="text-warning mb-4">Menu Favorit Kami</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-right">
+        <div class="card shadow border-0">
+          <img src="gambar_umkm/puding_coklat.jpg" class="card-img-top" alt="Puding Coklat">
+          <div class="card-body">
+            <h5 class="card-title">Puding Coklat Premium</h5>
+            <p class="card-text">Rasa coklat pekat, lembut, dan meleleh di mulut.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="card shadow border-0">
+          <img src="gambar_umkm/puding_mango.jpg" class="card-img-top" alt="Puding Mangga">
+          <div class="card-body">
+            <h5 class="card-title">Puding Mangga Tropis</h5>
+            <p class="card-text">Manis segar dari buah mangga pilihan.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-left">
+        <div class="card shadow border-0">
+          <img src="gambar_umkm/puding_pandan.jpg" class="card-img-top" alt="Puding Pandan">
+          <div class="card-body">
+            <h5 class="card-title">Puding Pandan Santan</h5>
+            <p class="card-text">Aroma pandan wangi dengan lembutnya santan alami.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+   <section id="galeri">
+    <div class="container text-center">
+      <h2 data-aos="fade-up">Galeri Menu PUDINGKU</h2>
+        <div class="col-md-4" data-aos="zoom-in">
+          <div class="galeri-item">
+            <img src="gambar umkm/gambar1.jpg" alt="Puding Coklat">
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="galeri-item">
+            <img src="gambar umkm/gambar2.jpg" alt="Ubud Rice Terrace">
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="galeri-item">
+            <img src="gambar umkm/gambar3.jpg" alt="Pantai Kuta">
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="galeri-item">
+            <img src="gambar umkm/gambar4.jpg" alt="Nusa Penida">
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="galeri-item">
+            <img src="gambar umkm/gambar5.jpg" alt="Uluwatu Temple">
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <div class="galeri-item">
+            <img src="gambar umkm/gambar7.jpg" alt="Pantai Sanur">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-5">
+  <h2 class="text-center mb-4">Video PUDINGKU</h2>
+  <div class="video-container mx-auto" style="max-width: 800px;">
+    <iframe 
+      src="https://www.youtube.com/embed/DHpziDx67Ps"
+      title="Video PUDINGKU"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  </section>
+
+
+  <section id="anggota" class="text-center">
+    <div class="container">
+      <h2 class="text-warning">Anggota Kelompok</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-2 col-6">
+          <div class="card p-3">
+            <img src="gambar/nando.jpg" alt="Anggota 1">
+            <h5>Muhammad Vernando Susanto<br>(E41252273)</h5>
+            <p>Anggota</p>
+          </div>
+        </div>
+        <div class="col-md-2 col-6">
+          <div class="card p-3">
+            <img src="gambar/alfin.jpg" alt="Anggota 2">
+            <h5>Muhammad Alfin Rohmatulloh<br>(E41252251)</h5>
+            <p>Anggota</p>
+          </div>
+        </div>
+        <div class="col-md-2 col-6">
+          <div class="card p-3">
+            <img src="gambar/rozi.jpg" alt="Anggota 3">
+            <h5>Muhammad Zainurroziqin Al Fateh<br>(E41252590)</h5>
+            <p>Anggota</p>
+          </div>
+        </div>
+        <div class="col-md-2 col-6">
+          <div class="card p-3">
+            <img src="gambar/alya.jpg" alt="Anggota 4">
+            <h5>Alya Namiratuz Zahra<br>(E41252906)</h5>
+            <p>Anggota</p>
+          </div>
+        </div>
+         <div class="col-md-2 col-6">
+          <div class="card p-3">
+            <img src="gambar/anita.jpg" alt="Anggota 5">
+            <h5>Anita Rahma Widyaningrum<br>(E41252350)</h5>
+            <p>Anggota</p>
+        </div>
+      </div>
+  </section>
+
+  <section id="kontak" class="text-center">
+   <div class="container">
+    <h3>Hubungi Kami</h3>
+    <p><i class="bi bi-telephone"></i> 0858-1244-3202</p>
+    <p><i class="bi bi-envelope"></i> kelompok1@pudingku.com</p>
+    <p><i class="bi bi-geo-alt"></i> Nganjuk, Jawa Timur - Indonesia</p>
+
+    <form class="mt-4" style="max-width:500px;margin:auto;">
+      <input type="text" class="form-control mb-2" placeholder="Nama Anda" required>
+      <input type="email" class="form-control mb-2" placeholder="Email (opsional)">
+      <textarea class="form-control mb-2" rows="3" placeholder="Pesan Anda"></textarea>
+      <button class="btn btn-warning">Kirim Pesan</button>
+    </form>
+
+    <div class="mt-4">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.245376925462!2d111.90094127406683!3d-7.600423474686372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79bb7cc4b3d1b7%3A0x3027a76e352b720!2sNganjuk%2C%20Kabupaten%20Nganjuk%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1696948800000!5m2!1sid!2sid"
+        width="100%" height="300" style="border:0;" allowfullscreen=""
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+  </section>
+
+  <footer class="text-center py-4" style="background:#111;color:white;">
+  <p class="mb-1">© 2025 PUDINGKU | Cita Rasa Lokal, Kualitas Nasional</p>
+  <p>
+    <i class="bi bi-instagram"></i> @pudingku.id |
+    <i class="bi bi-facebook"></i> Pudingku Official |
+    <i class="bi bi-geo-alt"></i> Nganjuk, Indonesia
+  </p>
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", function() {
+      const navbar = document.querySelector(".navbar");
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    });
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+  AOS.init({ duration: 1000, once: true });
+  </script>
+   
+   <a href="https://wa.me/6285812443202" target="_blank" 
+     class="position-fixed bottom-0 end-0 m-4 btn btn-success rounded-circle shadow" 
+     style="width:60px;height:60px;display:flex;justify-content:center;align-items:center;font-size:1.6rem;">
+     <i class="bi bi-whatsapp"></i>
+   </a>
+   
+   <button id="toTopBtn" class="btn btn-warning position-fixed bottom-0 end-0 m-5 rounded-circle shadow">
+     <i class="bi bi-arrow-up"></i>
+   </button>
+
+   <script>
+     const btn = document.getElementById("toTopBtn");
+     btn.style.display = "none";
+
+     window.addEventListener("scroll", () => {
+     btn.style.display = window.scrollY > 200 ? "block" : "none";
+    });
+
+     btn.addEventListener("click", () => {
+     window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    </script>
+
+</body>
+</html>
